@@ -1,0 +1,140 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: DM Sans, "sans-serif";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.125rem;
+  line-height: 150%;
+  background-color: var(--cream);
+}
+
+:root {
+  --soft-red: hsl(10, 79%, 65%);
+  --cyan: hsl(186, 34%, 60%);
+  --dark-brown: hsl(25, 47%, 15%);
+  --medium-brown: hsl(28, 10%, 53%);
+  --cream: hsl(27, 66%, 92%);
+  --very-pale-orange: hsl(33, 100%, 98%);
+}
+
+/* **************************************** */
+
+.container {
+  margin: 150px auto;
+  width: 500px;
+}
+
+.content {
+}
+
+.balance {
+  border-radius: 20px;
+  background-color: var(--soft-red);
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .balance__content {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 30px;
+  }
+
+  .balance__info {
+    color: var(--very-pale-orange);
+  }
+
+  .balance__title {
+    font-size: 13px;
+    font-weight: inherit;
+
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+
+  .balance__sum {
+    font-weight: 700;
+    font-size: 25px;
+  }
+}
+
+.spending {
+  border-radius: 20px;
+  background-color: var(--very-pale-orange);
+
+  .spending__content {
+    padding: 30px;
+  }
+
+  .spending__title {
+    font-weight: 700;
+    color: var(--dark-brown);
+  }
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.chart {
+  width: 50px;
+  border-radius: 5px;
+  background-color: var(--soft-red);
+}
+
+.chart_mon {
+  height: 30px;
+}
+
+.chart_tue {
+  height: 60px;
+}
+
+.chart_wed {
+  height: 80px;
+}
+
+.chart_thu {
+}
+
+.chart_fri {
+}
+
+.chart_sat {
+}
+
+.chart_sun {
+}
+
+.day-of-week {
+}
+
+.total {
+}
+
+.this-month {
+  .this-month__title {
+  }
+
+  .this-month__sum {
+  }
+}
+
+.last-month {
+  .last-month__percent {
+  }
+
+  .last-month__title {
+  }
+}

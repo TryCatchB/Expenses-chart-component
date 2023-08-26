@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans:regular,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Expenses chart</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <div class="balance">
+          <div class="balance__content">
+            <div class="balance__info">
+              <h4 class="balance__title">My balance</h4>
+              <p class="balance__sum">$921.48</p>
+            </div>
+            <img src="images/logo.svg" alt="Logo" />
+          </div>
+        </div>
+        <div class="spending">
+          <div class="spending__content">
+            <h2 class="spending__title">Spending - Last 7 days</h2>
+            <div class="charts">
+              <div class="chart chart_mon"></div>
+              <div class="chart chart_tue"></div>
+              <div class="chart chart_wed"></div>
+              <div class="chart chart_thu"></div>
+              <div class="chart chart_fri"></div>
+              <div class="chart chart_sat"></div>
+              <div class="chart chart_sun"></div>
+              <p class="day-of-week">mon</p>
+              <p class="day-of-week">tue</p>
+              <p class="day-of-week">wed</p>
+              <p class="day-of-week">thu</p>
+              <p class="day-of-week">fri</p>
+              <p class="day-of-week">sat</p>
+              <p class="day-of-week">sun</p>
+            </div>
+            <div class="total">
+              <div class="this-month">
+                <h4 class="this-month__title">Total this month</h4>
+                <p class="this-month__sum">$478.33</p>
+              </div>
+              <div class="last-month">
+                <p class="last-month__percent">+2.4%</p>
+                <h4 class="last-month__title">from last month</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
