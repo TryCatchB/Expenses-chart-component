@@ -27,26 +27,24 @@ body {
 /* **************************************** */
 
 .container {
-  margin: 150px auto;
-  width: 500px;
-}
-
-.content {
+  margin: 3.125rem auto;
+  width: 33.75rem;
+  padding: 0px 1.25rem;
 }
 
 .balance {
-  border-radius: 20px;
+  border-radius: 1.25rem;
   background-color: var(--soft-red);
 
   &:not(:last-child) {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
 
   .balance__content {
     display: flex;
-    gap: 10px;
+    gap: 0.625rem;
     justify-content: space-between;
-    padding: 30px;
+    padding: 1.875rem;
   }
 
   .balance__info {
@@ -54,26 +52,26 @@ body {
   }
 
   .balance__title {
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: inherit;
 
     &:not(:last-child) {
-      margin-bottom: 5px;
+      margin-bottom: 0.3125rem;
     }
   }
 
   .balance__sum {
     font-weight: 700;
-    font-size: 25px;
+    font-size: 1.5625rem;
   }
 }
 
 .spending {
-  border-radius: 20px;
+  border-radius: 1.25rem;
   background-color: var(--very-pale-orange);
 
   .spending__content {
-    padding: 30px;
+    padding: 1.875rem;
   }
 
   .spending__title {
@@ -83,58 +81,175 @@ body {
 }
 
 .charts {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  position: relative;
+  display: flex;
+  gap: 0.625rem;
+  width: 27.5rem;
+  padding: 3.75rem 0px 1.25rem 0px;
+  border-bottom: 0.125rem solid var(--cream);
 }
 
 .chart {
-  width: 50px;
-  border-radius: 5px;
-  background-color: var(--soft-red);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  .chart__price {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    font-weight: inherit;
+    font-size: 15px;
+    border-radius: 3px;
+    padding: 5px;
+    color: var(--very-pale-orange);
+    background-color: var(--dark-brown);
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  .price_mon {
+    top: 42px;
+  }
+
+  .price_tue {
+    top: 2px;
+  }
+
+  .price_wed {
+    top: -44px;
+  }
+
+  .price_thu {
+    top: 11px;
+  }
+
+  .price_fri {
+    top: 32px;
+  }
+
+  .price_sat {
+    top: -18px;
+  }
+
+  .price_sun {
+    top: 28px;
+  }
+
+  .chart__day {
+    width: 3.125rem;
+    font-size: 0.9375rem;
+    text-align: center;
+    color: var(--medium-brown);
+  }
 }
 
 .chart_mon {
-  height: 30px;
+  height: 2.8125rem;
 }
 
 .chart_tue {
-  height: 60px;
+  height: 5.3125rem;
 }
 
 .chart_wed {
-  height: 80px;
+  height: 8.125rem;
+  cursor: pointer;
+  border-radius: 0.3125rem;
+  background-color: var(--cyan);
 }
 
 .chart_thu {
+  height: 4.6875rem;
 }
 
 .chart_fri {
+  height: 3.4375rem;
 }
 
 .chart_sat {
+  height: 6.5625rem;
 }
 
 .chart_sun {
-}
-
-.day-of-week {
+  height: 3.75rem;
 }
 
 .total {
+  .total__content {
+    display: flex;
+    gap: 0.625rem;
+    justify-content: space-between;
+    padding-top: 1.5625rem;
+  }
 }
 
 .this-month {
-  .this-month__title {
+  .this-month__title:not(:last-child) {
+    margin-bottom: 0.4375rem;
   }
 
   .this-month__sum {
+    font-size: 2.5rem;
   }
 }
 
 .last-month {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
   .last-month__percent {
+    text-align: right;
   }
 
   .last-month__title {
+    text-align: end;
+  }
+
+  .last-month__percent,
+  .last-month__title {
+    height: 1.25rem;
+  }
+}
+
+.this-month__title,
+.last-month__title {
+  font-weight: inherit;
+  font-size: 1rem;
+  color: var(--medium-brown);
+}
+
+.last-month__percent,
+.this-month__sum {
+  font-weight: 700;
+  color: var(--dark-brown);
+}
+
+.chart_mon,
+.chart_tue,
+.chart_thu,
+.chart_fri,
+.chart_sat,
+.chart_sun {
+  cursor: pointer;
+  border-radius: 0.3125rem;
+  background-color: var(--soft-red);
+}
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+  .container {
+    width: 26.75rem;
+  }
+
+  .spending {
+    .spending__content {
+      padding: 1.25rem 1.25rem 2.1875rem 1.25rem;
+    }
   }
 }
