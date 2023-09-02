@@ -100,9 +100,9 @@ body {
     position: absolute;
     z-index: 2;
     font-weight: inherit;
-    font-size: 15px;
-    border-radius: 3px;
-    padding: 5px;
+    font-size: 0.9375rem;
+    border-radius: 0.1875rem;
+    padding: 0.3125rem;
     color: var(--very-pale-orange);
     background-color: var(--dark-brown);
 
@@ -112,31 +112,31 @@ body {
   }
 
   .price_mon {
-    top: 42px;
+    top: 27%;
   }
 
   .price_tue {
-    top: 2px;
+    top: 1.5%;
   }
 
   .price_wed {
-    top: -44px;
+    top: -28.5%;
   }
 
   .price_thu {
-    top: 11px;
+    top: 7.2%;
   }
 
   .price_fri {
-    top: 32px;
+    top: 20.5%;
   }
 
   .price_sat {
-    top: -18px;
+    top: -12%;
   }
 
   .price_sun {
-    top: 28px;
+    top: 18%;
   }
 
   .chart__day {
@@ -160,6 +160,10 @@ body {
   cursor: pointer;
   border-radius: 0.3125rem;
   background-color: var(--cyan);
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 .chart_thu {
@@ -238,6 +242,10 @@ body {
   cursor: pointer;
   border-radius: 0.3125rem;
   background-color: var(--soft-red);
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 /* MOBILE */
@@ -245,6 +253,19 @@ body {
 @media (max-width: 767px) {
   .container {
     width: 26.75rem;
+  }
+
+  .charts {
+    width: 22.5rem;
+  }
+
+  .chart {
+    width: 2.5rem;
+
+    .chart__price {
+      right: -0.375rem;
+      padding: 0.1875rem;
+    }
   }
 
   .spending {
