@@ -22,6 +22,7 @@ body {
   --medium-brown: hsl(28, 10%, 53%);
   --cream: hsl(27, 66%, 92%);
   --very-pale-orange: hsl(33, 100%, 98%);
+  --hover-opacity: 0.7
 }
 
 /* **************************************** */
@@ -31,6 +32,8 @@ body {
   width: 33.75rem;
   padding: 0px 1.25rem;
 }
+
+/* balance */
 
 .balance {
   border-radius: 1.25rem;
@@ -66,27 +69,43 @@ body {
   }
 }
 
+/* spending */
+
 .spending {
   border-radius: 1.25rem;
   background-color: var(--very-pale-orange);
 
   .spending__content {
-    padding: 1.875rem;
+    padding: 5%
   }
 
   .spending__title {
     font-weight: 700;
+    text-align: center;
     color: var(--dark-brown);
   }
 }
 
+/* charts */
+
 .charts {
   position: relative;
   display: flex;
-  gap: 0.625rem;
-  width: 27.5rem;
+  justify-content: center;
+  gap: 2.2%;
+  width: 100%; 
   padding: 3.75rem 0px 1.25rem 0px;
   border-bottom: 0.125rem solid var(--cream);
+}
+
+#chart {
+  cursor: pointer;
+  border-radius: 0.3125rem;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: var(--hover-opacity);
+  }
 }
 
 .chart {
@@ -111,31 +130,31 @@ body {
     }
   }
 
-  .price_mon {
+  .price-mon {
     top: 27%;
   }
 
-  .price_tue {
+  .price-tue {
     top: 1.5%;
   }
 
-  .price_wed {
+  .price-wed {
     top: -28.5%;
   }
 
-  .price_thu {
+  .price-thu {
     top: 7.2%;
   }
 
-  .price_fri {
+  .price-fri {
     top: 20.5%;
   }
 
-  .price_sat {
+  .price-sat {
     top: -12%;
   }
 
-  .price_sun {
+  .price-sun {
     top: 18%;
   }
 
@@ -145,42 +164,42 @@ body {
     text-align: center;
     color: var(--medium-brown);
   }
-}
 
-.chart_mon {
-  height: 2.8125rem;
-}
+  .chart-mon {
+    height: 2.8125rem;
+  }
 
-.chart_tue {
-  height: 5.3125rem;
-}
+  .chart-tue {
+    height: 5.3125rem;
+  }
 
-.chart_wed {
-  height: 8.125rem;
-  cursor: pointer;
-  border-radius: 0.3125rem;
-  background-color: var(--cyan);
+  .chart-wed {
+    height: 8.125rem;
+    background-color: var(--cyan);
+  }
 
-  &:hover {
-    opacity: 0.7;
+  .chart-thu {
+    height: 4.6875rem;
+  }
+
+  .chart-fri {
+    height: 3.4375rem;
+  }
+
+  .chart-sat {
+    height: 6.5625rem;
+  }
+
+  .chart-sun {
+    height: 3.75rem;
+  }
+
+  :is(.chart-mon, .chart-tue, .chart-thu, .chart-fri, .chart-sat, .chart-sun) {
+    background-color: var(--soft-red);
   }
 }
 
-.chart_thu {
-  height: 4.6875rem;
-}
-
-.chart_fri {
-  height: 3.4375rem;
-}
-
-.chart_sat {
-  height: 6.5625rem;
-}
-
-.chart_sun {
-  height: 3.75rem;
-}
+/* total */
 
 .total {
   .total__content {
@@ -214,38 +233,20 @@ body {
     text-align: end;
   }
 
-  .last-month__percent,
-  .last-month__title {
+  :is(.last-month__percent, .last-month__title) {
     height: 1.25rem;
   }
 }
 
-.this-month__title,
-.last-month__title {
+:is(.this-month__title, .last-month__title) {
   font-weight: inherit;
   font-size: 1rem;
   color: var(--medium-brown);
 }
 
-.last-month__percent,
-.this-month__sum {
+:is(.last-month__percent, .this-month__sum) {
   font-weight: 700;
   color: var(--dark-brown);
-}
-
-.chart_mon,
-.chart_tue,
-.chart_thu,
-.chart_fri,
-.chart_sat,
-.chart_sun {
-  cursor: pointer;
-  border-radius: 0.3125rem;
-  background-color: var(--soft-red);
-
-  &:hover {
-    opacity: 0.7;
-  }
 }
 
 /* MOBILE */
@@ -255,22 +256,12 @@ body {
     width: 26.75rem;
   }
 
-  .charts {
-    width: 22.5rem;
-  }
-
   .chart {
     width: 2.5rem;
 
     .chart__price {
       right: -0.375rem;
       padding: 0.1875rem;
-    }
-  }
-
-  .spending {
-    .spending__content {
-      padding: 1.25rem 1.25rem 2.1875rem 1.25rem;
     }
   }
 }

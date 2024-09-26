@@ -1,11 +1,14 @@
 import { getData, updateChartPrices } from "./functions.js";
 
-const charts = document.querySelectorAll("#chart");
+const charts = document.querySelector(".charts");
 
-charts.forEach((chart) =>
-  chart.addEventListener("click", (event) => {
-    getData("data.json").then((data) => {
-      updateChartPrices(data, event);
-    });
-  })
-);
+charts.addEventListener("click", async (event) => {
+  const chart = event.target.closest(".chart");
+
+  if (chart) {
+    const url = "data.json";
+    const data = await getData(url);
+
+    updateChartPrices(data, event);
+  }
+});

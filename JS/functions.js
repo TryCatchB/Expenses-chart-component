@@ -6,14 +6,18 @@ export async function getData(url = "") {
 }
 
 export function updateChartPrices(data, event) {
-  data.forEach((item) => {
-    const parentNode = event.target.closest(".chart");
-    const price = parentNode.querySelector(`.price_${item.day}`);
+  const parentNode = event.target.closest(".chart");
+  const day = parentNode.querySelector(".chart__day").textContent;
+  const priceElement = parentNode.querySelector(`.price-${day.toLowerCase()}`);
 
-    updatePriceElement(price, item.amount);
+  const item = data.find(
+    (item) => item.day.toLowerCase() === day.toLowerCase()
+  );
 
-    removeClassFromPrice(price);
-  });
+  if (item) {
+    updatePriceElement(priceElement, item.amount);
+    removeClassFromPrice(priceElement);
+  }
 }
 
 function updatePriceElement(price, amount) {
